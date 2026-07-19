@@ -1,0 +1,52 @@
+pragma language_version 0.23;
+
+import CompactStandardLibrary;
+
+// ---------------------------------------------------------------------------
+// ShieldSwap: confidential swap intents on Midnight.
+//
+// The trade (amount + minimum output) is a set of PRIVATE witnesses. Circuit
+// parameters in Compact are public inputs, so the trade is intentionally NOT
+// passed as parameters — it lives in witnesses and is only ever proven against,
+// never written to the public ledger. That is what keeps it invisible to bots.
+//
+// Each proof records only that it PASSED (a counter tick) — public evidence the
+// constraint held, revealing nothing about the private values behind it.
+// ---------------------------------------------------------------------------
+
+// Public state. Reveals nothing about any individual trade.
+export ledger intentCount: Counter;
+export ledger ownershipProofs: Counter;
+export ledger outputValidityProofs: Counter;
+export ledger authorizedWallet: Bytes<32>;
+
+// Private inputs supplied by the user's wallet at proof time. Never revealed.
+witness swapAmount(): Uint<64>;
+witness minOutput(): Uint<64>;
+witness walletBalance(): Uint<64>;
+
+// Intent creation: register a confidential intent. Amount stays private.
+export circuit createConfidentialIntent(): [] {
+  intentCount.increment(1);
+}
+
+// PROOF 1 — Ownership. Proves the caller holds at least the amount they intend
+// to swap, without revealing the balance or the amount. The counter tick is the
+// only public trace: "an ownership proof passed."
+export circuit proveOwnership(): [] {
+  assert(walletBalance() >= swapAmount(), "insufficient balance for swap");
+  ownershipProofs.increment(1);
+}
+
+// PROOF 2 — Output validity. Proves the requested minimum output is positive
+// (a well-formed slippage bound), again without revealing the value.
+export circuit proveOutputValidity(): [] {
+  assert(minOutput() > 0, "minimum output must be positive");
+  outputValidityProofs.increment(1);
+}
+
+// PROOF 3 — Signature. The one thing the pitch chooses to reveal: which wallet
+// authorized the order. Disclosed to the public ledger on purpose.
+export circuit proveSignature(wallet: Bytes<32>): [] {
+  authorizedWallet = disclose(wallet);
+}

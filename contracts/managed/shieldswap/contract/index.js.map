@@ -1,0 +1,8 @@
+{
+  "version": 3,
+  "file": "index.js",
+  "sourceRoot": "../../../",
+  "sources": ["shieldswap.compact"],
+  "names": [],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;EAAA;;;;;;;;;;;;;;;;;;;MA4BA,AAAA,wBAEC;;;;;;;;;;;;;;;;;;;;;;;OAAA;MAKD,AAAA,cAGC;;;;;;;;;;;;;;;;;;;;;;OAAA;MAID,AAAA,mBAGC;;;;;;;;;;;;;;;;;;;;;;OAAA;MAID,AAAA,cAEC;;;;;cAF6B,QAAiB;;;;;;;;;;;;;;;;;;yCAAjB,QAAiB;;;;;;;;;gDAAjB,QAAiB;;;OAE9C;;;;;;;;;;;;;;GACA;EApDD;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAiBA;;;;;;;;;yEAAmC;IACnC;;;;;;;;;yEAAuC;IACvC;;;;;;;;;yEAA4C;IAC5C;;;;;;;;;yEAA0C;;;;;;;GAgCzC;EA7BD,AAAA,aAA+B;;0DAA/B,UAA+B;;;;;;;;;;;;;;GAAA;EAC/B,AAAA,YAA8B;;0DAA9B,SAA8B;;;;;;;;;;;;;;GAAA;EAC9B,AAAA,gBAAkC;;0DAAlC,aAAkC;;;;;;;;;;;;;;GAAA;EAGlC,AAAA,2BAEC;UADC,KAAW;IAAX;;;;;;;;;;6FAAA,KAAW;;;;wEAAA;;GACZ;EAKD,AAAA,iBAGC;QAFQ,GAA+B;;;6BAA/B,GAA+B;;;;UACtC,KAAe;IAAf;;;;;;;;;;6FAAA,KAAe;;;;wEAAA;;GAChB;EAID,AAAA,sBAGC;QAFQ,GAAe;;6BAAf,GAAe;;UACtB,KAAoB;IAApB;;;;;;;;;;6FAAA,KAAoB;;;;wEAAA;;GACrB;EAID,AAAA,iBAEC,4BAF6B,QAAiB;IAC7C;;;;;;;2HAA4B,QAAM;;yEAAlB;;GACjB;;;;;;;;;;;;;;;;IAlCD;qCAAA;;;;;;;;;;;0GAAmC;KAAA;IACnC;qCAAA;;;;;;;;;;;0GAAuC;KAAA;IACvC;qCAAA;;;;;;;;;;;0GAA4C;KAAA;IAC5C;qCAAA;;;;;;;;;;;0GAA0C;KAAA;;;;;;;;;;;;;;"
+}

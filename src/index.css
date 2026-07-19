@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  color: #e5e7eb; /* gray-200 */
+  background-color: #0a0a0f;
+  background-image:
+    radial-gradient(60rem 60rem at 15% -10%, rgba(139, 92, 246, 0.18), transparent 60%),
+    radial-gradient(50rem 50rem at 100% 0%, rgba(16, 185, 129, 0.10), transparent 55%),
+    radial-gradient(40rem 40rem at 50% 120%, rgba(139, 92, 246, 0.12), transparent 60%);
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: rgba(139, 92, 246, 0.35);
+}
+
+/* Subtle float for accent orbs / hero elements */
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.animate-floaty {
+  animation: floaty 4s ease-in-out infinite;
+}
