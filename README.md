@@ -146,7 +146,6 @@ ShieldSwap/
 **MLH Midnight Hackathon 2026**
 - Dates: July 17–19, 2026
 - Track: DeFi, Beginner
-- Team: Arshiya Sharma
 
 ## What's Next
 
